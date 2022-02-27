@@ -39,9 +39,9 @@ public class ListUserFrame extends javax.swing.JFrame {
         defaultTableModel.addColumn("SDT");
         defaultTableModel.addColumn("Tai Khoan");
         defaultTableModel.addColumn("Mat Khau");
-        defaultTableModel.addColumn("GioiThieu");
+        defaultTableModel.addColumn("Gioi Thieu");
         defaultTableModel.addColumn("Vai Tro");
-        defaultTableModel.addColumn("SoThich");
+        defaultTableModel.addColumn("So Thich");
         
         setTableData(userService.getAllUsers());
 
@@ -128,6 +128,7 @@ public class ListUserFrame extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void RefreshBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshBtnActionPerformed

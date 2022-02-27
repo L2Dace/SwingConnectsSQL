@@ -51,7 +51,9 @@ public class JavaSwingLinkSQL {
     public void addUser (users user){
             Connection connection = SQLconnection.getConnection();
             
-            String sql = "INSERT INTO USER(TEN, SDT, TENTK, MATKHAU, GIOITHIEU, VAITRO, SOTHICH)";
+            String sql = "INSERT INTO NguoiDung (Ten,Sdt,TenTK,Matkhau,GioiThieu,VaiTro,SoThich) "
+                    + "values (?,?,?,?,?,?,?) "
+                    ;
             
             try {
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -63,8 +65,9 @@ public class JavaSwingLinkSQL {
                 preparedStatement.setString(6, user.getVaiTro());
                 preparedStatement.setString(7, user.getSoThich());
                 
-                int rs = preparedStatement.executeUpdate();
-                System.out.println(rs);
+//                int rs = preparedStatement.executeUpdate();
+//                System.out.println(rs);
+                preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -73,7 +76,7 @@ public class JavaSwingLinkSQL {
     public void updateUser (users user){
             Connection connection = SQLconnection.getConnection();
             
-            String sql = "UPDATE user SET TEN = ?, SDT = ?, TENTK = ?, MATKHAU = ?, GIOITHIEU = ?, VAITRO = ?, SOTHICH = ?";
+            String sql = "UPDATE users SET TEN = ?, SDT = ?, TENTK = ?, MATKHAU = ?, GIOITHIEU = ?, VAITRO = ?, SOTHICH = ?";
             
             try {
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -84,7 +87,7 @@ public class JavaSwingLinkSQL {
                 preparedStatement.setString(5, user.getGioiThieu());
                 preparedStatement.setString(6, user.getVaiTro());
                 preparedStatement.setString(7, user.getSoThich());
-                preparedStatement.setInt(7, user.getId());
+                preparedStatement.setInt(8, user.getId());
                 
                 int rs = preparedStatement.executeUpdate();
                 System.out.println(rs);

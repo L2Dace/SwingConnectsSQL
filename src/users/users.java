@@ -11,7 +11,7 @@ package users;
  */
 public class users {
     private int id;
-    private String ten,sdt,tenTK,matKhau,GioiThieu,vaiTro,SoThich;
+    private String ten,sdt,tenTK,matKhau,GioiThieu,VaiTro,SoThich;
 
     public int getId() {
         return id;
@@ -62,11 +62,11 @@ public class users {
     }
 
     public String getVaiTro() {
-        return vaiTro;
+        return VaiTro;
     }
 
-    public void setVaiTro(String vaiTro) {
-        this.vaiTro = vaiTro;
+    public void setVaiTro(String VaiTro) {
+        this.VaiTro = VaiTro;
     }
 
     public String getSoThich() {
