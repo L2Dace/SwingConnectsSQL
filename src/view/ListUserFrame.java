@@ -39,9 +39,9 @@ public class ListUserFrame extends javax.swing.JFrame {
         defaultTableModel.addColumn("SDT");
         defaultTableModel.addColumn("Tai Khoan");
         defaultTableModel.addColumn("Mat Khau");
-        defaultTableModel.addColumn("About");
+        defaultTableModel.addColumn("GioiThieu");
         defaultTableModel.addColumn("Vai Tro");
-        defaultTableModel.addColumn("Favourites");
+        defaultTableModel.addColumn("SoThich");
         
         setTableData(userService.getAllUsers());
 

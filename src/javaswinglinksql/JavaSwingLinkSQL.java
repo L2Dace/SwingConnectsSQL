@@ -48,7 +48,7 @@ public class JavaSwingLinkSQL {
      *
      * @param user
      */
-    public static void addUser (users user){
+    public void addUser (users user){
             Connection connection = SQLconnection.getConnection();
             
             String sql = "INSERT INTO USER(TEN, SDT, TENTK, MATKHAU, ABOUT, VAITRO, FAVORITES)";
@@ -70,7 +70,7 @@ public class JavaSwingLinkSQL {
         }
         }
         
-    public static void updateUser (users user){
+    public void updateUser (users user){
             Connection connection = SQLconnection.getConnection();
             
             String sql = "UPDATE user SET TEN = ?, SDT = ?, TENTK = ?, MATKHAU = ?, GIOITHIEU = ?, VAITRO = ?, SOTHICH = ?";
@@ -93,7 +93,7 @@ public class JavaSwingLinkSQL {
         }
         }
 
-    public static void deleteUser(int id){
+    public void deleteUser(int id){
         Connection connection = SQLconnection.getConnection();
         
         String sql = "delete from users where ID = ?";

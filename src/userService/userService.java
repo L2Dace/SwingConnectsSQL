@@ -26,6 +26,6 @@ public class userService {
     }
     
     public void addUser(users user){
-        JavaSwingLinkSQL.addUser(user);
+        userLink.addUser(user);
     }
 }
