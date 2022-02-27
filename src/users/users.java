@@ -11,7 +11,7 @@ package users;
  */
 public class users {
     private int id;
-    private String ten,sdt,tenTK,matKhau,about,vaiTro,favorites;
+    private String ten,sdt,tenTK,matKhau,GioiThieu,vaiTro,SoThich;
 
     public int getId() {
         return id;
@@ -53,12 +53,12 @@ public class users {
         this.matKhau = matKhau;
     }
 
-    public String getAbout() {
-        return about;
+    public String getGioiThieu() {
+        return GioiThieu;
     }
 
-    public void setAbout(String about) {
-        this.about = about;
+    public void setGioiThieu(String about) {
+        this.GioiThieu = about;
     }
 
     public String getVaiTro() {
@@ -69,12 +69,12 @@ public class users {
         this.vaiTro = vaiTro;
     }
 
-    public String getFavorites() {
-        return favorites;
+    public String getSoThich() {
+        return SoThich;
     }
 
-    public void setFavourites(String favorites) {
-        this.favorites = favorites;
+    public void setSoThich(String favorites) {
+        this.SoThich = favorites;
     }
     
     

@@ -57,6 +57,7 @@ public class AddUserFrame extends javax.swing.JFrame {
         backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -151,11 +152,8 @@ public class AddUserFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                                 .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(nameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                                    .addComponent(phoneTextField))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                            .addComponent(nameTextField)
+                            .addComponent(phoneTextField))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -213,7 +211,7 @@ public class AddUserFrame extends javax.swing.JFrame {
         user.setSdt(phoneTextField.getText());
         user.setTenTK(accountTextField.getText());
         user.setMatKhau(String.valueOf(passwordTextField.getPassword()));
-        user.setAbout(aboutTextArea.getText());
+        user.setGioiThieu(aboutTextArea.getText());
         String favorites = "";
         if(musicCheckBox.isSelected()){
             favorites = "Âm nhạc";
@@ -221,7 +219,7 @@ public class AddUserFrame extends javax.swing.JFrame {
         if(movieCheckBox.isSelected()){
             favorites = "Xem phim";
         }
-        user.setFavourites(favorites);
+        user.setSoThich(favorites);
         
         String role = "User";
         if(adminRadioButton.isSelected()){

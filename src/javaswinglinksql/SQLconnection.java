@@ -12,7 +12,7 @@ import java.sql.*;
 public class SQLconnection {
     
     public static Connection getConnection() {
-        String url = "jdbc:sqlserver://MSI\\SQLEXPRESS:1433;databaseName=BanHang";
+        String url = "jdbc:sqlserver://MSI\\SQLEXPRESS:1433;databaseName=javaSwing";
         String userName = "sa";
         String password = "blackace71202";
     

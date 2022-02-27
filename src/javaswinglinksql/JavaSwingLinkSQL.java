@@ -32,9 +32,9 @@ public class JavaSwingLinkSQL {
                 user.setSdt(rs.getString("sdt"));
                 user.setTenTK(rs.getString("tenTK"));
                 user.setMatKhau(rs.getString("matKhau"));
-                user.setAbout(rs.getString("about"));
+                user.setGioiThieu(rs.getString("gioiThieu"));
                 user.setVaiTro(rs.getString("vaiTro"));
-                user.setFavourites(rs.getString("favorites"));
+                user.setSoThich(rs.getString("soThich"));
                 
                 users.add(user);
             }
@@ -59,9 +59,9 @@ public class JavaSwingLinkSQL {
                 preparedStatement.setString(2, user.getSdt());
                 preparedStatement.setString(3, user.getTenTK());
                 preparedStatement.setString(4, user.getMatKhau());
-                preparedStatement.setString(5, user.getAbout());
+                preparedStatement.setString(5, user.getGioiThieu());
                 preparedStatement.setString(6, user.getVaiTro());
-                preparedStatement.setString(7, user.getFavorites());
+                preparedStatement.setString(7, user.getSoThich());
                 
                 int rs = preparedStatement.executeUpdate();
                 System.out.println(rs);
@@ -73,7 +73,7 @@ public class JavaSwingLinkSQL {
     public static void updateUser (users user){
             Connection connection = SQLconnection.getConnection();
             
-            String sql = "UPDATE user SET TEN = ?, SDT = ?, TENTK = ?, MATKHAU = ?, ABOUT = ?, VAITRO = ?, FAVORITES = ?";
+            String sql = "UPDATE user SET TEN = ?, SDT = ?, TENTK = ?, MATKHAU = ?, GIOITHIEU = ?, VAITRO = ?, SOTHICH = ?";
             
             try {
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -81,9 +81,9 @@ public class JavaSwingLinkSQL {
                 preparedStatement.setString(2, user.getSdt());
                 preparedStatement.setString(3, user.getTenTK());
                 preparedStatement.setString(4, user.getMatKhau());
-                preparedStatement.setString(5, user.getAbout());
+                preparedStatement.setString(5, user.getGioiThieu());
                 preparedStatement.setString(6, user.getVaiTro());
-                preparedStatement.setString(7, user.getFavorites());
+                preparedStatement.setString(7, user.getSoThich());
                 preparedStatement.setInt(7, user.getId());
                 
                 int rs = preparedStatement.executeUpdate();

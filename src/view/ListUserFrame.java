@@ -49,7 +49,8 @@ public class ListUserFrame extends javax.swing.JFrame {
 
     private void setTableData(List<users> users) {
         for (users user : users) {
-            defaultTableModel.addRow(new Object[]{user.getId(), user.getTen(), user.getSdt(), user.getTenTK(), user.getMatKhau(), user.getAbout(), user.getVaiTro(), user.getFavorites()});
+            defaultTableModel.addRow(new Object[]{user.getId(), user.getTen(), user.getSdt(),
+                user.getTenTK(), user.getMatKhau(), user.getGioiThieu(), user.getVaiTro(), user.getSoThich()});
             
         }
     }
