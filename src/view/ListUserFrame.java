@@ -70,6 +70,7 @@ public class ListUserFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        AddUserBtn.setBackground(new java.awt.Color(255, 204, 51));
         AddUserBtn.setText("Add User");
         AddUserBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +93,7 @@ public class ListUserFrame extends javax.swing.JFrame {
         UserTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         jScrollPane1.setViewportView(UserTable);
 
+        RefreshBtn.setBackground(new java.awt.Color(204, 204, 255));
         RefreshBtn.setText("Refresh");
         RefreshBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

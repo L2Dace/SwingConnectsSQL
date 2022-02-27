@@ -59,7 +59,7 @@ public class AddUserFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Thêm mới người dùng");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -100,6 +100,7 @@ public class AddUserFrame extends javax.swing.JFrame {
 
         movieCheckBox.setText("Xem phim");
 
+        addButton.setBackground(new java.awt.Color(255, 153, 51));
         addButton.setText("Thêm");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +108,7 @@ public class AddUserFrame extends javax.swing.JFrame {
             }
         });
 
+        backButton.setBackground(new java.awt.Color(153, 153, 255));
         backButton.setText("Quay lại");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,17 +143,19 @@ public class AddUserFrame extends javax.swing.JFrame {
                                     .addComponent(userRadioButton)
                                     .addComponent(movieCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jScrollPane1)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3))
+                            .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(91, 91, 91))
                             .addComponent(nameTextField)
                             .addComponent(phoneTextField))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -212,14 +216,6 @@ public class AddUserFrame extends javax.swing.JFrame {
         user.setTenTK(accountTextField.getText());
         user.setMatKhau(String.valueOf(passwordTextField.getPassword()));
         user.setGioiThieu(aboutTextArea.getText());
-        String favorites = "";
-        if(musicCheckBox.isSelected()){
-            favorites = "Âm nhạc";
-        }
-        if(movieCheckBox.isSelected()){
-            favorites = "Xem phim";
-        }
-        user.setSoThich(favorites);
         
         String role = "User";
         if(adminRadioButton.isSelected()){
@@ -229,6 +225,15 @@ public class AddUserFrame extends javax.swing.JFrame {
             role = "User";
         }
         user.setVaiTro(role);
+        
+        String favorites = "";
+        if(musicCheckBox.isSelected()){
+            favorites = "Nghe nhạc";
+        }
+        if(movieCheckBox.isSelected()){
+            favorites = "Xem phim";
+        }
+        user.setSoThich(favorites);
         
         userService.addUser(user);
         new ListUserFrame().setVisible(true);

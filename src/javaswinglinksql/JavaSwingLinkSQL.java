@@ -51,7 +51,7 @@ public class JavaSwingLinkSQL {
     public void addUser (users user){
             Connection connection = SQLconnection.getConnection();
             
-            String sql = "INSERT INTO USER(TEN, SDT, TENTK, MATKHAU, ABOUT, VAITRO, FAVORITES)";
+            String sql = "INSERT INTO USER(TEN, SDT, TENTK, MATKHAU, GIOITHIEU, VAITRO, SOTHICH)";
             
             try {
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
