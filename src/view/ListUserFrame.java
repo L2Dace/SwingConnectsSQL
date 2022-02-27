@@ -70,6 +70,11 @@ public class ListUserFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         AddUserBtn.setText("Add User");
+        AddUserBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddUserBtnActionPerformed(evt);
+            }
+        });
 
         UserTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -127,6 +132,12 @@ public class ListUserFrame extends javax.swing.JFrame {
         
         setTableData(userService.getAllUsers());
     }//GEN-LAST:event_RefreshBtnActionPerformed
+
+    private void AddUserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddUserBtnActionPerformed
+        // TODO add your handling code here:
+        new AddUserFrame().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_AddUserBtnActionPerformed
 
     /**
      * @param args the command line arguments

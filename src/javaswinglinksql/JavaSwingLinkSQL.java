@@ -44,68 +44,72 @@ public class JavaSwingLinkSQL {
         return users;
     }
     
-//    public void addUser (users user){
-//            Connection connection = SQLconnection.getConnection();
-//            
-//            String sql = "INSERT INTO USER(TEN, SDT, TENTK, MATKHAU, ABOUT, VAITRO, FAVORITES)";
-//            
-//            try {
-//                PreparedStatement preparedStatement = connection.prepareStatement(sql);
-//                preparedStatement.setString(1, user.getTen());
-//                preparedStatement.setString(2, user.getSdt());
-//                preparedStatement.setString(3, user.getTenTK());
-//                preparedStatement.setString(4, user.getMatKhau());
-//                preparedStatement.setString(5, user.getAbout());
-//                preparedStatement.setString(6, user.getVaiTro());
-//                preparedStatement.setString(7, user.getFavorites());
-//                
-//                int rs = preparedStatement.executeUpdate();
-//                System.out.println(rs);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        }
-//        
-//    public void updateUser (users user){
-//            Connection connection = SQLconnection.getConnection();
-//            
-//            String sql = "UPDATE user SET TEN = ?, SDT = ?, TENTK = ?, MATKHAU = ?, ABOUT = ?, VAITRO = ?, FAVORITES = ?";
-//            
-//            try {
-//                PreparedStatement preparedStatement = connection.prepareStatement(sql);
-//                preparedStatement.setString(1, user.getTen());
-//                preparedStatement.setString(2, user.getSdt());
-//                preparedStatement.setString(3, user.getTenTK());
-//                preparedStatement.setString(4, user.getMatKhau());
-//                preparedStatement.setString(5, user.getAbout());
-//                preparedStatement.setString(6, user.getVaiTro());
-//                preparedStatement.setString(7, user.getFavorites());
-//                preparedStatement.setInt(7, user.getId());
-//                
-//                int rs = preparedStatement.executeUpdate();
-//                System.out.println(rs);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        }
-//
-//    public void deleteUser(int id){
-//        Connection connection = SQLconnection.getConnection();
-//        
-//        String sql = "delete from users where ID = ?";
-//        
-//        try{
-//            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-//            preparedStatement.setInt(1, id);
-//            
-//            int rs = preparedStatement.executeUpdate();
-//                System.out.println(rs);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//    static void main(String[] args) {
-//        // TODO code application logic here
-//    }
+    /**
+     *
+     * @param user
+     */
+    public static void addUser (users user){
+            Connection connection = SQLconnection.getConnection();
+            
+            String sql = "INSERT INTO USER(TEN, SDT, TENTK, MATKHAU, ABOUT, VAITRO, FAVORITES)";
+            
+            try {
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, user.getTen());
+                preparedStatement.setString(2, user.getSdt());
+                preparedStatement.setString(3, user.getTenTK());
+                preparedStatement.setString(4, user.getMatKhau());
+                preparedStatement.setString(5, user.getAbout());
+                preparedStatement.setString(6, user.getVaiTro());
+                preparedStatement.setString(7, user.getFavorites());
+                
+                int rs = preparedStatement.executeUpdate();
+                System.out.println(rs);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        }
+        
+    public static void updateUser (users user){
+            Connection connection = SQLconnection.getConnection();
+            
+            String sql = "UPDATE user SET TEN = ?, SDT = ?, TENTK = ?, MATKHAU = ?, ABOUT = ?, VAITRO = ?, FAVORITES = ?";
+            
+            try {
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, user.getTen());
+                preparedStatement.setString(2, user.getSdt());
+                preparedStatement.setString(3, user.getTenTK());
+                preparedStatement.setString(4, user.getMatKhau());
+                preparedStatement.setString(5, user.getAbout());
+                preparedStatement.setString(6, user.getVaiTro());
+                preparedStatement.setString(7, user.getFavorites());
+                preparedStatement.setInt(7, user.getId());
+                
+                int rs = preparedStatement.executeUpdate();
+                System.out.println(rs);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        }
+
+    public static void deleteUser(int id){
+        Connection connection = SQLconnection.getConnection();
+        
+        String sql = "delete from users where ID = ?";
+        
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            
+            int rs = preparedStatement.executeUpdate();
+                System.out.println(rs);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+   static void main(String[] args) {
+    //TODO code application logic here
+    }
     
 }

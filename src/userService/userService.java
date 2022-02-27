@@ -24,4 +24,8 @@ public class userService {
     public List<users> getAllUsers(){
         return userLink.getAllUsers();
     }
+    
+    public void addUser(users user){
+        JavaSwingLinkSQL.addUser(user);
+    }
 }
