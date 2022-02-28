@@ -28,4 +28,8 @@ public class userService {
     public void addUser(users user){
         userLink.addUser(user);
     }
+    
+    public void deleteUser(int id){
+        userLink.deleteUser(id);
+    }
 }

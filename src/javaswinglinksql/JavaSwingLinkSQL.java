@@ -99,7 +99,7 @@ public class JavaSwingLinkSQL {
     public void deleteUser(int id){
         Connection connection = SQLconnection.getConnection();
         
-        String sql = "delete from users where ID = ?";
+        String sql = "delete from NguoiDung where ID = ?";
         
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(sql);

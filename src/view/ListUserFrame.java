@@ -6,6 +6,7 @@
 package view;
 
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import userService.userService;
 import users.users;
@@ -67,8 +68,10 @@ public class ListUserFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         UserTable = new javax.swing.JTable();
         RefreshBtn = new javax.swing.JButton();
+        DeleteButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 350));
 
         AddUserBtn.setBackground(new java.awt.Color(255, 204, 51));
         AddUserBtn.setText("Add User");
@@ -101,6 +104,13 @@ public class ListUserFrame extends javax.swing.JFrame {
             }
         });
 
+        DeleteButton.setText("Xóa");
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,6 +121,8 @@ public class ListUserFrame extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(AddUserBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(RefreshBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -121,7 +133,8 @@ public class ListUserFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AddUserBtn)
-                    .addComponent(RefreshBtn))
+                    .addComponent(RefreshBtn)
+                    .addComponent(DeleteButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -142,6 +155,25 @@ public class ListUserFrame extends javax.swing.JFrame {
         new AddUserFrame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AddUserBtnActionPerformed
+
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
+        // TODO add your handling code here:
+        int row = UserTable.getSelectedRow();
+        if (row == -1) {
+            JOptionPane.showMessageDialog(ListUserFrame.this, "Chưa chọn người dùng", "Lỗi", JOptionPane.ERROR_MESSAGE);
+        } else {
+            int confirm = JOptionPane.showConfirmDialog(ListUserFrame.this, "Chắc chắn xóa user này?");
+            
+            if (confirm == JOptionPane.YES_OPTION){
+                int userId = Integer.valueOf(String.valueOf(UserTable.getValueAt(row, 0)));
+                
+                userService.deleteUser(userId);
+                
+                defaultTableModel.setRowCount(0);
+        setTableData(userService.getAllUsers());
+            }
+        }
+    }//GEN-LAST:event_DeleteButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,6 +212,7 @@ public class ListUserFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddUserBtn;
+    private javax.swing.JButton DeleteButton;
     private javax.swing.JButton RefreshBtn;
     private javax.swing.JTable UserTable;
     private javax.swing.JScrollPane jScrollPane1;
