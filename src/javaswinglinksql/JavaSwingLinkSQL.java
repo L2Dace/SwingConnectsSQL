@@ -73,28 +73,28 @@ public class JavaSwingLinkSQL {
         }
         }
         
-    public void updateUser (users user){
-            Connection connection = SQLconnection.getConnection();
-            
-            String sql = "UPDATE users SET TEN = ?, SDT = ?, TENTK = ?, MATKHAU = ?, GIOITHIEU = ?, VAITRO = ?, SOTHICH = ?";
-            
-            try {
-                PreparedStatement preparedStatement = connection.prepareStatement(sql);
-                preparedStatement.setString(1, user.getTen());
-                preparedStatement.setString(2, user.getSdt());
-                preparedStatement.setString(3, user.getTenTK());
-                preparedStatement.setString(4, user.getMatKhau());
-                preparedStatement.setString(5, user.getGioiThieu());
-                preparedStatement.setString(6, user.getVaiTro());
-                preparedStatement.setString(7, user.getSoThich());
-                preparedStatement.setInt(8, user.getId());
-                
-                int rs = preparedStatement.executeUpdate();
-                System.out.println(rs);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        }
+//    public void updateUser (users user){
+//            Connection connection = SQLconnection.getConnection();
+//            
+//            String sql = "UPDATE users SET TEN = ?, SDT = ?, TENTK = ?, MATKHAU = ?, GIOITHIEU = ?, VAITRO = ?, SOTHICH = ?";
+//            
+//            try {
+//                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+//                preparedStatement.setString(1, user.getTen());
+//                preparedStatement.setString(2, user.getSdt());
+//                preparedStatement.setString(3, user.getTenTK());
+//                preparedStatement.setString(4, user.getMatKhau());
+//                preparedStatement.setString(5, user.getGioiThieu());
+//                preparedStatement.setString(6, user.getVaiTro());
+//                preparedStatement.setString(7, user.getSoThich());
+//                preparedStatement.setInt(8, user.getId());
+//                
+//                int rs = preparedStatement.executeUpdate();
+//                System.out.println(rs);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        }
 
     public void deleteUser(int id){
         Connection connection = SQLconnection.getConnection();
