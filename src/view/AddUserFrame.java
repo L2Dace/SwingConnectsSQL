@@ -101,6 +101,7 @@ public class AddUserFrame extends javax.swing.JFrame {
         movieCheckBox.setText("Xem phim");
 
         addButton.setBackground(new java.awt.Color(255, 153, 51));
+        addButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         addButton.setText("Thêm");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,6 +110,7 @@ public class AddUserFrame extends javax.swing.JFrame {
         });
 
         backButton.setBackground(new java.awt.Color(153, 153, 255));
+        backButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         backButton.setText("Quay lại");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

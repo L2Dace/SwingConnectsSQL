@@ -74,6 +74,7 @@ public class ListUserFrame extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(800, 350));
 
         AddUserBtn.setBackground(new java.awt.Color(255, 204, 51));
+        AddUserBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         AddUserBtn.setText("Add User");
         AddUserBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +98,7 @@ public class ListUserFrame extends javax.swing.JFrame {
         jScrollPane1.setViewportView(UserTable);
 
         RefreshBtn.setBackground(new java.awt.Color(204, 204, 255));
+        RefreshBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         RefreshBtn.setText("Refresh");
         RefreshBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +106,8 @@ public class ListUserFrame extends javax.swing.JFrame {
             }
         });
 
+        DeleteButton.setBackground(new java.awt.Color(255, 102, 102));
+        DeleteButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         DeleteButton.setText("Xóa");
         DeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
